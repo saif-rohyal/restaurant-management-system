@@ -1,18 +1,20 @@
-// src/services/api.js
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE =
+  import.meta.env.VITE_API_URL ||
+  "https://restaurant-management-system-4efz.vercel.app/api";
 
 const api = axios.create({
   baseURL: API_BASE,
 });
 
-// Attach JWT token to every request if present
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
+
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
   return config;
 });
 
