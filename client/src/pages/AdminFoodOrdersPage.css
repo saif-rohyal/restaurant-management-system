@@ -1,0 +1,527 @@
+.admin-food-orders-page {
+  min-height: 100vh;
+  background: #f5f2ec;
+  color: #1c1c1a;
+}
+
+.admin-food-orders-container {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+  padding: 70px 0 100px;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.admin-food-orders-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 55px;
+}
+
+.admin-food-orders-heading span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  opacity: 0.6;
+}
+
+.admin-food-orders-heading h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.admin-food-orders-heading h1 em {
+  font-style: italic;
+}
+
+.admin-food-orders-heading p {
+  max-width: 520px;
+  margin: 22px 0 0;
+  color: #6d6a63;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.admin-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid #1c1c1a;
+  color: #1c1c1a;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: 0.25s ease;
+}
+
+.admin-back-button:hover {
+  background: #1c1c1a;
+  color: #fff;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.admin-order-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.admin-stat-card {
+  min-height: 120px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e4e0d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.admin-stat-card span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #77736b;
+}
+
+.admin-stat-card strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.admin-stat-card.revenue strong {
+  font-size: 25px;
+}
+
+/* =========================
+   MESSAGES / ERROR
+========================= */
+
+.admin-orders-error {
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  background: #fff1f0;
+  border: 1px solid #e2b5b1;
+  color: #9b3029;
+  font-size: 14px;
+}
+
+.admin-orders-message {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #e4e0d8;
+  color: #77736b;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.admin-orders-empty {
+  padding: 90px 30px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e4e0d8;
+}
+
+.admin-orders-empty > div {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.admin-orders-empty h2 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.admin-orders-empty p {
+  margin: 0;
+  color: #77736b;
+}
+
+/* =========================
+   ORDER LIST
+========================= */
+
+.admin-food-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.admin-food-order-card {
+  background: #fff;
+  border: 1px solid #e2ded6;
+  overflow: hidden;
+}
+
+/* =========================
+   ORDER HEADER
+========================= */
+
+.admin-food-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 30px;
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.admin-order-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #8b877f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.admin-food-order-header h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.admin-food-order-header p {
+  margin: 7px 0 0;
+  color: #88847d;
+  font-size: 12px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.admin-order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #ddd8cf;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #777;
+}
+
+.status-pending .status-dot {
+  background: #c48b26;
+}
+
+.status-preparing .status-dot {
+  background: #8a6dba;
+}
+
+.status-ready .status-dot {
+  background: #428a63;
+}
+
+.status-completed .status-dot {
+  background: #286c48;
+}
+
+.status-cancelled .status-dot {
+  background: #b44840;
+}
+
+.status-cancelled {
+  color: #a53e37;
+}
+
+/* =========================
+   CUSTOMER / ORDER INFO
+========================= */
+
+.admin-customer-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.8fr 1fr;
+  gap: 25px;
+  padding: 25px 30px;
+  background: #faf8f4;
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.admin-customer-info,
+.admin-order-type,
+.admin-room-info,
+.admin-order-total {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-customer-section span {
+  color: #89857d;
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  font-weight: 700;
+}
+
+.admin-customer-section strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-customer-section small {
+  color: #8b877f;
+  font-size: 12px;
+}
+
+.admin-order-total {
+  text-align: right;
+}
+
+.admin-order-total strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* =========================
+   FOOD ITEMS
+========================= */
+
+.admin-food-order-items {
+  padding: 20px 30px;
+}
+
+.admin-food-order-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 13px 0;
+  border-bottom: 1px solid #eeeae3;
+}
+
+.admin-food-order-item:last-child {
+  border-bottom: none;
+}
+
+.admin-food-item-image {
+  width: 70px;
+  height: 60px;
+  overflow: hidden;
+  background: #ebe7df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-food-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-food-item-image span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #77736b;
+}
+
+.admin-food-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-food-item-info strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-food-item-info span {
+  color: #89857d;
+  font-size: 12px;
+}
+
+.admin-food-item-total {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.admin-order-actions {
+  padding: 24px 30px 28px;
+  background: #faf8f4;
+  border-top: 1px solid #e8e4dc;
+}
+
+.admin-order-actions > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #89857d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status-buttons button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #d7d2ca;
+  background: #fff;
+  color: #4f4c46;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.2s ease;
+}
+
+.status-buttons button:hover {
+  border-color: #1c1c1a;
+  background: #1c1c1a;
+  color: #fff;
+}
+
+.status-buttons button.active {
+  background: #1c1c1a;
+  border-color: #1c1c1a;
+  color: #fff;
+}
+
+.status-buttons button.active.cancelled {
+  background: #9d3b34;
+  border-color: #9d3b34;
+}
+
+.status-buttons button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-order-actions small {
+  display: block;
+  margin-top: 10px;
+  color: #8a867f;
+  font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .admin-order-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .admin-customer-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-order-total {
+    text-align: left;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-food-orders-container {
+    width: 94%;
+    padding: 45px 0 70px;
+  }
+
+  .admin-food-orders-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-food-orders-heading h1 {
+    font-size: 52px;
+  }
+
+  .admin-order-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-food-order-header {
+    padding: 22px;
+  }
+
+  .admin-customer-section {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .admin-food-order-items {
+    padding: 15px 22px;
+  }
+
+  .admin-order-actions {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 500px) {
+  .admin-order-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-food-orders-heading h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .admin-food-order-header {
+    flex-direction: column;
+  }
+
+  .admin-food-order-item {
+    grid-template-columns: 55px 1fr;
+  }
+
+  .admin-food-item-image {
+    width: 55px;
+    height: 55px;
+  }
+
+  .admin-food-item-total {
+    grid-column: 2;
+  }
+
+  .status-buttons button {
+    flex: 1;
+    min-width: 110px;
+  }
+}
